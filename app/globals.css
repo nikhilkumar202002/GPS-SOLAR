@@ -1,7 +1,42 @@
 @import "tailwindcss";
 
+:root {
+  --font-google-sans: "Google Sans", "Google Sans Text", Arial, sans-serif;
+
+  /* Brand palette */
+  --color-gold: #e9b11f;
+  --color-charcoal: #231f20;
+  --color-white: #ffffff;
+  --color-sunbeam: #faea7e;
+  --color-bronze: #c18e2e;
+  --color-amber: #dab251;
+  --color-goldenrod: #f6d454;
+  --color-honey: #f0c02f;
+  --color-mustard: #d29c25;
+  --color-warm-gold: #f0d46e;
+
+  /* Optional RGB aliases for rgba()/rgb() usage */
+  --color-gold-rgb: 233, 177, 31;
+  --color-charcoal-rgb: 35, 31, 32;
+  --color-white-rgb: 255, 255, 255;
+  --color-sunbeam-rgb: 250, 234, 126;
+  --color-bronze-rgb: 193, 142, 46;
+  --color-amber-rgb: 218, 178, 81;
+  --color-goldenrod-rgb: 246, 212, 84;
+  --color-honey-rgb: 240, 192, 47;
+  --color-mustard-rgb: 210, 156, 37;
+  --color-warm-gold-rgb: 240, 212, 110;
+}
+
+body {
+  font-family: var(--font-google-sans);
+}
+
 /* Shared horizontal page gutter. */
 .container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
   padding-inline: 20px;
 }
 
