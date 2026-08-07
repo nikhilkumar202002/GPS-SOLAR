@@ -41,8 +41,8 @@ const ServiceSection = () => {
   const columnTemplate = services
     .map((_, index) =>
       index === activeIndex
-        ? "minmax(0, 1.9fr)"
-        : "minmax(78px, 0.55fr)",
+        ? "minmax(0, 2.15fr)"
+        : "minmax(64px, 0.42fr)",
     )
     .join(" ");
 
