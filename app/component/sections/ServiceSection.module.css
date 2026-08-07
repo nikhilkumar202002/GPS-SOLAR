@@ -123,8 +123,10 @@
 .cardClosed .number {
   position: absolute;
   top: 22px;
-  left: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   align-self: auto;
+  font-size: 22px;
 }
 
 .triggerTitle {
@@ -141,7 +143,7 @@
   left: 50%;
   writing-mode: vertical-rl;
   transform: translate(-50%, -50%) rotate(180deg);
-  font-size: 1.05rem;
+  font-size: 22px;
   letter-spacing: -0.02em;
   margin: 0;
 }
