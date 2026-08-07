@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import {
-  HiOutlineArrowUpRight,
   HiOutlineBolt,
   HiOutlineBanknotes,
   HiOutlineShieldCheck,
