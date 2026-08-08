@@ -4,6 +4,7 @@ import WhyChooseUs from "./component/sections/WhyChooseUs";
 import AboutUs from "./component/sections/AboutUs";
 import ServiceSection from "./component/sections/ServiceSection";
 import ProcessStep from "./component/sections/ProcessStep";
+import WhySolar from "./component/sections/WhySolar";
 
 const Page = () => {
   return (
@@ -14,6 +15,8 @@ const Page = () => {
       <ServiceSection />
       <ProcessStep />
       <WhyChooseUs />
+      <WhySolar />
+
     </main>
   );
 };

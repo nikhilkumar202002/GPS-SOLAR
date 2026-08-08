@@ -6,6 +6,8 @@
 
   background: #ffffff;
   padding: 120px 0;
+  border-bottom: 1px solid rgba(35, 31, 32, 0.14);
+
 }
 
 .header {
@@ -75,15 +77,13 @@
 
 .stepWord {
   position: absolute;
-  top: 18px;
-  left: 22px;
-  font-size: clamp(7rem, 9vw, 8.2rem);
+  top: -30px;
+  left: 0px;
+  font-size: 180px;
   line-height: 0.9;
   font-weight: 800;
-  letter-spacing: -0.08em;
   pointer-events: none;
   user-select: none;
-  white-space: nowrap;
 }
 
 .card .stepWord {

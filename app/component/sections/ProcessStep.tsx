@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./ProcessStep.module.css";
+import { motion } from "motion/react";
 
 type ProcessItem = {
   number: string;
@@ -35,23 +36,53 @@ const processSteps: ProcessItem[] = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 const ProcessStep = () => {
   return (
-    <section className={styles.section} aria-labelledby="process-heading">
+    <motion.section
+      className={styles.section}
+      aria-labelledby="process-heading"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.22 }}
+    >
       <div className="container">
         <div className={styles.inner}>
-          <div className={styles.header}>
+          <motion.div className={styles.header} variants={itemVariants}>
             <p className={styles.eyebrow}>Our Process</p>
             <h2 id="process-heading" className={styles.heading}>
               From Consultation to
               <br />
               Clean Energy Made Simple
             </h2>
-          </div>
+          </motion.div>
 
-          <ul className={styles.grid} role="list">
+          <motion.ul className={styles.grid} role="list" variants={containerVariants}>
             {processSteps.map((step) => (
-              <li key={step.number} className={styles.gridItem}>
+              <motion.li key={step.number} className={styles.gridItem} variants={itemVariants}>
                 <button type="button" className={styles.card}>
                   <span className={styles.stepWord} aria-hidden="true">
                     STEP
@@ -63,12 +94,12 @@ const ProcessStep = () => {
                     <p className={styles.description}>{step.description}</p>
                   </div>
                 </button>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
