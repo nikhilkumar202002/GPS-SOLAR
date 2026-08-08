@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { HiOutlineArrowRight } from "react-icons/hi2";
-
 import styles from "./ServiceSection.module.css";
 
 type ServiceItem = {
@@ -65,7 +64,9 @@ const ServiceSection = () => {
           <div className={styles.header}>
             <p className={styles.eyebrow}>Our Services</p>
             <h2 id="services-heading" className={styles.heading}>
-              Complete Solar Solutions Under One Roof
+              Complete Solar Solutions
+              <br />
+              Under One Roof
             </h2>
           </div>
         </div>
