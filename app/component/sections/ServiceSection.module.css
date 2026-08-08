@@ -84,8 +84,8 @@
 }
 
 .activeTrigger {
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: baseline;
+  gap: 0.8rem;
   padding: 40px 40px 0 40px;
 }
 
@@ -93,9 +93,8 @@
   position: relative;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.75rem;
   padding: 40px;
 }
 
@@ -124,19 +123,20 @@
 }
 
 .activeTrigger .title {
-  padding-top: 0.18rem;
   font-size: 35px;
   font-weight: 500;
+  line-height: 1;
 }
 
 .activeTrigger .number {
   font-size: 35px;
   font-weight: 500;
+  line-height: 1;
 }
 
 .inactiveTrigger .title {
   flex: 0;
-  margin-top: 0;
+  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: center;
