@@ -3,59 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { HiOutlineArrowRight } from "react-icons/hi2";
+import { homeServiceData } from "@/app/data/serviceData";
 import styles from "./ServiceSection.module.css";
 
-type ServiceItem = {
-  id: string;
-  number: string;
-  title: string;
-  description: string;
-  imageSrc: string;
-  imageAlt: string;
-};
-
-const services: ServiceItem[] = [
-  {
-    id: "residential-solar-systems",
-    number: "01.",
-    title: "Residential Solar Systems",
-    description:
-      "Power your home with clean, renewable energy while significantly reducing monthly electricity bills. Our residential solar systems are designed for safety, efficiency, and long-term performance.",
-    imageSrc: "/images/solar-residential.jpg",
-    imageAlt: "Residential solar panels in warm sunlight",
-  },
-  {
-    id: "commercial-solar-solutions",
-    number: "02.",
-    title: "Commercial Solar Solutions",
-    description:
-      "Lower operational expenses and improve energy efficiency with scalable solar systems tailored for commercial buildings, offices, institutions, and industrial facilities.",
-    imageSrc: "/images/solar-residential.jpg",
-    imageAlt: "Commercial solar installation with modern rooftop panels",
-  },
-  {
-    id: "professional-installation",
-    number: "03.",
-    title: "Professional Installation",
-    description:
-      "Our skilled technicians ensure every installation is completed with precision, adhering to the highest safety and quality standards.",
-    imageSrc: "/images/solar-residential.jpg",
-    imageAlt: "Solar installation team working on rooftop panels",
-  },
-  {
-    id: "maintenance-support",
-    number: "04.",
-    title: "Maintenance & Support",
-    description:
-      "Protect your investment with dependable maintenance services, performance monitoring, inspections, and technical support.",
-    imageSrc: "/images/solar-residential.jpg",
-    imageAlt: "Technician inspecting and maintaining a solar array",
-  },
-];
-
 const ServiceSection = () => {
-  const [activeId, setActiveId] = useState(services[0].id);
-  const [loadedImageId, setLoadedImageId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState(homeServiceData[0].id);
 
   return (
     <section className={styles.section} aria-labelledby="services-heading">
@@ -72,7 +24,7 @@ const ServiceSection = () => {
         </div>
 
         <div className={styles.accordion}>
-          {services.map((service) => {
+          {homeServiceData.map((service) => {
             const isActive = service.id === activeId;
 
             return (
@@ -130,14 +82,9 @@ const ServiceSection = () => {
                         src={service.imageSrc}
                         alt={service.imageAlt}
                         fill
+                        loading="lazy"
                         sizes="(max-width: 768px) 100vw, (max-width: 1280px) 70vw, 960px"
-                        className={`${styles.image} ${
-                          loadedImageId === service.id
-                            ? styles.imageLoaded
-                            : styles.imageLoading
-                        }`}
-                        onLoad={() => setLoadedImageId(service.id)}
-                        onError={() => setLoadedImageId(null)}
+                        className={styles.image}
                       />
 
                       <div className={styles.readMoreWrap}>
