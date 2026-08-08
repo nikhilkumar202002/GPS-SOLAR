@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { HiOutlineArrowRight } from "react-icons/hi2";
 import { homeServiceData } from "@/app/data/serviceData";
+import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./ServiceSection.module.css";
 
 const ServiceSection = () => {
@@ -20,6 +21,7 @@ const ServiceSection = () => {
               <br />
               Under One Roof
             </h2>
+         
           </div>
         </div>
 
@@ -102,6 +104,12 @@ const ServiceSection = () => {
             );
           })}
         </div>
+
+           <div className={styles.ctaWrap}>
+              <PrimaryButton href="/services" className={styles.primaryCta}>
+                View All Services
+              </PrimaryButton>
+            </div>
       </div>
     </section>
   );

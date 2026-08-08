@@ -1,6 +1,7 @@
 .section {
   background: #ffffff;
-  padding: 120px 0px;
+  padding: 120px 0px 120px;
+  border-bottom: 1px solid rgba(35, 31, 32, 0.14);
 }
 
 
@@ -11,6 +12,17 @@
 .header {
   text-align: center;
   margin-bottom: clamp(2.25rem, 4vw, 4rem);
+}
+
+.ctaWrap {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.primaryCta {
+  margin-inline: auto;
 }
 
 .eyebrow {
@@ -359,6 +371,10 @@
 
   .header {
     margin-bottom: 1.75rem;
+  }
+
+  .ctaWrap {
+    margin-top: 1.15rem;
   }
 
   .heading {
