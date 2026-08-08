@@ -2,114 +2,155 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { HiOutlineArrowUpRight } from "react-icons/hi2";
+import { HiOutlineArrowRight } from "react-icons/hi2";
 
-import solarBanner from "@/app/assets/banners/home-banner-1.webp";
 import styles from "./ServiceSection.module.css";
 
-const services = [
+type ServiceItem = {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+};
+
+const services: ServiceItem[] = [
   {
+    id: "residential-solar-systems",
     number: "01.",
     title: "Residential Solar Systems",
-    text: "Power your home with clean, renewable energy while significantly reducing monthly electricity bills. Our residential solar systems are designed for safety, efficiency, and long-term performance.",
-    imageAlt: "Solar technician inspecting residential solar panels",
+    description:
+      "Power your home with clean, renewable energy while significantly reducing monthly electricity bills. Our residential solar systems are designed for safety, efficiency, and long-term performance.",
+    imageSrc: "/images/solar-residential.jpg",
+    imageAlt: "Residential solar panels in warm sunlight",
   },
   {
+    id: "commercial-solar-solutions",
     number: "02.",
     title: "Commercial Solar Solutions",
-    text: "Lower operational expenses and improve energy efficiency with scalable solar systems tailored for commercial buildings, offices, institutions, and industrial facilities.",
-    imageAlt: "Commercial solar installation with expansive panel rows",
+    description:
+      "Lower operational expenses and improve energy efficiency with scalable solar systems tailored for commercial buildings, offices, institutions, and industrial facilities.",
+    imageSrc: "/images/solar-residential.jpg",
+    imageAlt: "Commercial solar installation with modern rooftop panels",
   },
   {
+    id: "professional-installation",
     number: "03.",
     title: "Professional Installation",
-    text: "Our skilled technicians ensure every installation is completed with precision, adhering to the highest safety and quality standards.",
-    imageAlt: "Technician performing professional solar installation",
+    description:
+      "Our skilled technicians ensure every installation is completed with precision, adhering to the highest safety and quality standards.",
+    imageSrc: "/images/solar-residential.jpg",
+    imageAlt: "Solar installation team working on rooftop panels",
   },
   {
+    id: "maintenance-support",
     number: "04.",
     title: "Maintenance & Support",
-    text: "Protect your investment with dependable maintenance services, performance monitoring, inspections, and technical support.",
-    imageAlt: "Solar support and maintenance on rooftop panels",
+    description:
+      "Protect your investment with dependable maintenance services, performance monitoring, inspections, and technical support.",
+    imageSrc: "/images/solar-residential.jpg",
+    imageAlt: "Technician inspecting and maintaining a solar array",
   },
 ];
 
 const ServiceSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const columnTemplate = services
-    .map((_, index) =>
-      index === activeIndex
-        ? "minmax(0, 2.15fr)"
-        : "minmax(64px, 0.42fr)",
-    )
-    .join(" ");
+  const [activeId, setActiveId] = useState(services[0].id);
+  const [loadedImageId, setLoadedImageId] = useState<string | null>(null);
 
   return (
     <section className={styles.section} aria-labelledby="services-heading">
-      <div className="container">
-        <div className={styles.shell}>
-          <header className={styles.header}>
+      <div className={styles.shell}>
+        <div className={`container ${styles.headerWrap}`}>
+          <div className={styles.header}>
             <p className={styles.eyebrow}>Our Services</p>
             <h2 id="services-heading" className={styles.heading}>
               Complete Solar Solutions
-              <br />
-              Under One Roof
+              {"\n"}Under One Roof
             </h2>
-          </header>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.showcaseBleed}>
-        <div
-          className={styles.showcase}
-          style={{ gridTemplateColumns: columnTemplate }}
-        >
-          {services.map((service, index) => {
-            const isOpen = index === activeIndex;
+        <div className={styles.accordion}>
+          {services.map((service) => {
+            const isActive = service.id === activeId;
 
             return (
               <article
-                key={service.number}
-                className={`${styles.card} ${isOpen ? styles.cardOpen : styles.cardClosed}`}
+                key={service.id}
+                className={`${styles.item} ${
+                  isActive ? styles.activeItem : styles.inactiveItem
+                }`}
+                style={{
+                  flexBasis: isActive ? "69%" : "10.333%",
+                }}
               >
                 <button
+                  id={`${service.id}-trigger`}
                   type="button"
-                  className={styles.trigger}
-                  onClick={() => setActiveIndex(index)}
-                  aria-expanded={isOpen}
-                  aria-label={`Open ${service.title}`}
+                  className={`${styles.trigger} ${
+                    isActive ? styles.activeTrigger : styles.inactiveTrigger
+                  }`}
+                  aria-expanded={isActive}
+                  aria-controls={`${service.id}-panel`}
+                  onClick={() => setActiveId(service.id)}
                 >
                   <span className={styles.number}>{service.number}</span>
-                  <span className={styles.triggerTitle}>{service.title}</span>
+                  <span className={styles.title}>{service.title}</span>
+                  {!isActive ? (
+                    <span className={styles.tabHint} aria-hidden="true" />
+                  ) : null}
                 </button>
 
-                <div className={styles.panel}>
-                  <div className={styles.copy}>
-                    <p className={styles.text}>{service.text}</p>
+                {isActive ? (
+                  <div
+                    id={`${service.id}-panel`}
+                    role="region"
+                    aria-labelledby={`${service.id}-trigger`}
+                    className={styles.panel}
+                  >
+                    <div className={styles.content}>
+                      <p className={styles.description}>{service.description}</p>
+                    </div>
 
-                    <Link href="/services" className={styles.cta}>
-                      <span>Read More</span>
-                      <span className={styles.ctaIcon}>
-                        <HiOutlineArrowUpRight />
-                      </span>
-                    </Link>
-                  </div>
+                    <div className={styles.media}>
+                      <div
+                        className={styles.placeholderBackdrop}
+                        aria-hidden="true"
+                      >
+                        <span className={styles.sunGlow} />
+                        <span className={styles.panelLineOne} />
+                        <span className={styles.panelLineTwo} />
+                        <span className={styles.panelLineThree} />
+                        <span className={styles.panelLineFour} />
+                      </div>
 
-                  <div className={styles.media}>
-                    <div className={styles.imageWrap}>
                       <Image
-                        src={solarBanner}
+                        key={service.id}
+                        src={service.imageSrc}
                         alt={service.imageAlt}
                         fill
-                        priority={index === 0}
-                        sizes="(max-width: 960px) 100vw, 72vw"
-                        className={styles.image}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 70vw, 960px"
+                        className={`${styles.image} ${
+                          loadedImageId === service.id
+                            ? styles.imageLoaded
+                            : styles.imageLoading
+                        }`}
+                        onLoad={() => setLoadedImageId(service.id)}
+                        onError={() => setLoadedImageId(null)}
                       />
+
+                      <div className={styles.readMoreWrap}>
+                        <a href="/contact" className={styles.readMore}>
+                          <span className={styles.readMoreText}>Read More</span>
+                          <span className={styles.readMoreIcon} aria-hidden="true">
+                            <HiOutlineArrowRight />
+                          </span>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ) : null}
               </article>
             );
           })}
