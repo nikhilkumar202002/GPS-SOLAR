@@ -65,8 +65,7 @@ const ServiceSection = () => {
           <div className={styles.header}>
             <p className={styles.eyebrow}>Our Services</p>
             <h2 id="services-heading" className={styles.heading}>
-              Complete Solar Solutions
-              {"\n"}Under One Roof
+              Complete Solar Solutions Under One Roof
             </h2>
           </div>
         </div>
