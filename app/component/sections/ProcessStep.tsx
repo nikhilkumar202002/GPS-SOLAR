@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 import styles from "./ProcessStep.module.css";
 
 type ProcessItem = {
@@ -38,35 +36,23 @@ const processSteps: ProcessItem[] = [
 ];
 
 const ProcessStep = () => {
-  const [activeStep, setActiveStep] = useState(2);
-
   return (
     <section className={styles.section} aria-labelledby="process-heading">
       <div className="container">
         <div className={styles.inner}>
-        <div className={styles.header}>
-          <p className={styles.eyebrow}>Our Process</p>
-          <h2 id="process-heading" className={styles.heading}>
-            From Consultation to
-            <br />
-            Clean Energy Made Simple
-          </h2>
-        </div>
+          <div className={styles.header}>
+            <p className={styles.eyebrow}>Our Process</p>
+            <h2 id="process-heading" className={styles.heading}>
+              From Consultation to
+              <br />
+              Clean Energy Made Simple
+            </h2>
+          </div>
 
-        <ul className={styles.grid} role="list">
-          {processSteps.map((step, index) => {
-            const isActive = index === activeStep;
-
-            return (
+          <ul className={styles.grid} role="list">
+            {processSteps.map((step) => (
               <li key={step.number} className={styles.gridItem}>
-                <button
-                  type="button"
-                  className={`${styles.card} ${
-                    isActive ? styles.cardActive : styles.cardInactive
-                  }`}
-                  aria-pressed={isActive}
-                  onClick={() => setActiveStep(index)}
-                >
+                <button type="button" className={styles.card}>
                   <span className={styles.stepWord} aria-hidden="true">
                     STEP
                   </span>
@@ -78,9 +64,8 @@ const ProcessStep = () => {
                   </div>
                 </button>
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
