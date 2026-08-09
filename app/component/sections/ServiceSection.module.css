@@ -436,7 +436,7 @@
   }
 
   .content {
-    padding: 1.15rem 1rem 0;
+    padding: 1.15rem 1rem 1.1rem;
   }
 
   .description {
@@ -451,6 +451,7 @@
 @media (max-width: 767px) {
   .section {
     padding: 4rem 0;
+    padding-bottom: 5rem;
   }
 
   .header {
@@ -487,10 +488,11 @@
 @media (max-width: 480px) {
   .section {
     padding: 3.25rem 0;
+    padding-bottom: 4.5rem;
   }
 
   .heading {
-    font-size: clamp(1.9rem, 10vw, 2.5rem);
+    font-size: 30px;
   }
 
   .eyebrow {
@@ -512,7 +514,7 @@
   }
 
   .content {
-    padding: 1rem 0.9rem 0;
+    padding: 1rem 0.9rem 1rem;
   }
 
   .description {
