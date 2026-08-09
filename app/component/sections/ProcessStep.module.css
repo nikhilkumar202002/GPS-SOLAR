@@ -183,4 +183,11 @@
   .grid {
     grid-template-columns: 1fr;
   }
+  .heading{
+    font-size: 30px;
+    line-height: 32px;
+  }
+  .eyebrow {
+  margin: 0 0 0.2rem;
+  }
 }

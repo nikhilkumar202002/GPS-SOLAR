@@ -94,4 +94,12 @@ align-items: center;
     padding: 1rem;
     gap: 1.25rem;
   }
+  .heading{
+    font-size: 30px;
+    line-height: 32px;
+  }
+  .eyebrow{
+    font-size: 16px;
+  margin: 0 0 0.2rem;
+  }
 }
