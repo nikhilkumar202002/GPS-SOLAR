@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 
-import homeBanner from "@/app/assets/banners/home-banner-1.webp";
+import homeBanner from "@/app/assets/images/home-about.webp";
 import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./AboutUs.module.css";
 
@@ -55,7 +55,10 @@ const AboutUs = () => {
             </motion.div>
 
             <motion.div className={styles.content} variants={itemVariants}>
-             
+              <motion.p className={styles.eyebrow} variants={itemVariants}>
+                About Us
+              </motion.p>
+
               <h2 className={styles.heading}>
                 Building a Sustainable Tomorrow with Solar Energy
               </h2>

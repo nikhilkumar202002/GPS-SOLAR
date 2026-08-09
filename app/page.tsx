@@ -13,13 +13,14 @@ const Page = () => {
     <main>
       <Hero />
       <TrustedPartner />
-      <CoreValues />
       <AboutUs />
       <ServiceSection />
       <ProcessStep />
       <WhyChooseUs />
       <WhySolar />
       <TeamHome />
+      <CoreValues />
+
 
 
     </main>

@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { FiChevronRight, FiMail, FiPhone } from "react-icons/fi";
 
 import footerLogo from "@/app/assets/footer-logo.png";
-import footerStrip from "@/app/assets/service/residential-solar-systems.webp";
+import footerStrip from "@/app/assets/banners/footer-banner.webp";
 import styles from "./Footer.module.css";
 
 const quickLinks = [

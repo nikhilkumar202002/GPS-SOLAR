@@ -19,10 +19,9 @@ align-items: center;
 .eyebrow {
   margin: 0 0 0.9rem;
   color: var(--color-gold);
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
 .heading {

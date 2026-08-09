@@ -10,7 +10,7 @@ import {
   HiOutlineWrenchScrewdriver,
 } from "react-icons/hi2";
 
-import homeBanner from "@/app/assets/banners/home-banner-1.webp";
+import homeBanner from "@/app/assets/images/why-choose-us.webp";
 import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./WhyChooseUs.module.css";
 
