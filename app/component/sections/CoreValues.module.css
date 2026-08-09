@@ -1,7 +1,5 @@
 .section {
   background: #ffffff;
-  border-top: 1px solid rgba(37, 37, 111, 0.12);
-  border-bottom: 1px solid rgba(37, 37, 111, 0.08);
   padding: 20px 0;
 }
 
@@ -12,7 +10,6 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  border-top: 1px solid rgba(30, 30, 30, 0.08);
 }
 
 .valueItem {
@@ -78,19 +75,6 @@
   color: #f2b719;
 }
 
-@media (min-width: 1200px) {
-  .valueItem:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 1px;
-    height: 50px;
-    background: rgba(30, 30, 30, 0.1);
-    transform: translateY(-50%);
-  }
-}
-
 @media (max-width: 1199px) {
   .valuesList {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -104,15 +88,10 @@
 
   .valuesList {
     grid-template-columns: 1fr;
-    border-top: 0;
   }
 
   .valueItem {
     padding: 16px 0;
-  }
-
-  .valueItem::after {
-    display: none;
   }
 }
 
