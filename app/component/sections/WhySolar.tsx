@@ -83,63 +83,72 @@ const WhySolar = () => {
         <div className={styles.overlay} />
 
         <div className={styles.heroShell}>
-          <motion.div
-            className={styles.heroCopy}
+          <div className="container">
+            <motion.div
+              className={styles.heroCopy}
+              variants={staggerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.45 }}
+            >
+              <motion.p className={styles.eyebrow} variants={fadeUpVariants}>
+                Why Go Solar?
+              </motion.p>
+
+              <motion.h2
+                id="why-solar-heading"
+                className={styles.heading}
+                variants={fadeUpVariants}
+              >
+                <span className={styles.highlight}>Invest</span> Once.{" "}
+                <span className={styles.highlight}>Save</span> for Years.
+              </motion.h2>
+
+              <motion.h3 className={styles.subheading} variants={fadeUpVariants}>
+                Reduce Electricity Bills
+              </motion.h3>
+
+              <motion.p className={styles.description} variants={fadeUpVariants}>
+                Generate your own electricity and enjoy substantial savings every month.
+              </motion.p>
+            </motion.div>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="container">
+        <div className={styles.cardsShell}>
+          <motion.ul
+            className={styles.cards}
+            role="list"
             variants={staggerVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.45 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.p className={styles.eyebrow} variants={fadeUpVariants}>
-              Why Go Solar?
-            </motion.p>
+            {benefits.map((benefit) => {
+              const Icon = benefit.icon;
 
-            <motion.h2
-              id="why-solar-heading"
-              className={styles.heading}
-              variants={fadeUpVariants}
-            >
-              <span className={styles.highlight}>Invest</span> Once.{" "}
-              <span className={styles.highlight}>Save</span> for Years.
-            </motion.h2>
+              return (
+                <motion.li
+                  key={benefit.title}
+                  className={styles.cardItem}
+                  variants={fadeUpVariants}
+                >
+                  <article className={styles.card}>
+                    <span className={styles.iconBox} aria-hidden="true">
+                      <Icon className={styles.icon} />
+                    </span>
 
-            <motion.h3 className={styles.subheading} variants={fadeUpVariants}>
-              Reduce Electricity Bills
-            </motion.h3>
-
-            <motion.p className={styles.description} variants={fadeUpVariants}>
-              Generate your own electricity and enjoy substantial savings every month.
-            </motion.p>
-          </motion.div>
+                    <h3 className={styles.cardTitle}>{benefit.title}</h3>
+                    <p className={styles.cardDescription}>{benefit.description}</p>
+                  </article>
+                </motion.li>
+              );
+            })}
+          </motion.ul>
         </div>
-      </div>
-
-      <div className={styles.cardsShell}>
-        <motion.ul
-          className={styles.cards}
-          role="list"
-          variants={staggerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {benefits.map((benefit) => {
-            const Icon = benefit.icon;
-
-            return (
-              <motion.li key={benefit.title} className={styles.cardItem} variants={fadeUpVariants}>
-                <article className={styles.card}>
-                  <span className={styles.iconBox} aria-hidden="true">
-                    <Icon className={styles.icon} />
-                  </span>
-
-                  <h3 className={styles.cardTitle}>{benefit.title}</h3>
-                  <p className={styles.cardDescription}>{benefit.description}</p>
-                </article>
-              </motion.li>
-            );
-          })}
-        </motion.ul>
       </div>
     </section>
   );

@@ -34,7 +34,7 @@
 }
 
 .heroCopy {
-  width: min(940px, calc(100% - 40px));
+  width: min(940px, 100%);
   color: #ffffff;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .cards {
-  width: min(1250px, calc(100% - 120px));
+  width: min(1250px, 100%);
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -172,7 +172,7 @@
   }
 
   .cards {
-    width: min(1250px, calc(100% - 80px));
+    width: min(1250px, 100%);
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -191,7 +191,7 @@
   }
 
   .heroCopy {
-    width: min(100%, 520px);
+    width: min(520px, 100%);
   }
 
   .eyebrow {
@@ -216,7 +216,7 @@
   }
 
   .cards {
-    width: calc(100% - 40px);
+    width: 100%;
     gap: 14px;
   }
 
@@ -238,7 +238,7 @@
 
 @media (max-width: 520px) {
   .cards {
-    width: calc(100% - 28px);
+    width: 100%;
     grid-template-columns: 1fr;
   }
 
