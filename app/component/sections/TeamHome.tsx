@@ -1,12 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
-import { FiArrowUpRight } from "react-icons/fi";
 
 import gowriPortrait from "@/app/assets/teams/Gowri.webp";
 import premPortrait from "@/app/assets/teams/prem-kumar.webp";
+import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./TeamHome.module.css";
 
 type Leader = {
@@ -97,12 +96,7 @@ const TeamHome = () => {
             </motion.h2>
 
             <motion.div variants={fadeUpVariants} className={styles.actions}>
-              <Link href="/contact" className={styles.cta}>
-                <span className={styles.ctaLabel}>Get a Quote</span>
-                <span className={styles.ctaIconWrap} aria-hidden="true">
-                  <FiArrowUpRight className={styles.ctaIcon} />
-                </span>
-              </Link>
+              <PrimaryButton href="/contact">Get a Quote</PrimaryButton>
             </motion.div>
           </motion.div>
 
