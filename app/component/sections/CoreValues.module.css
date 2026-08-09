@@ -1,0 +1,125 @@
+.section {
+  background: #ffffff;
+  border-top: 1px solid rgba(37, 37, 111, 0.12);
+  border-bottom: 1px solid rgba(37, 37, 111, 0.08);
+  padding: 20px 0;
+}
+
+.valuesList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(30, 30, 30, 0.08);
+}
+
+.valueItem {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 18px 6px 0;
+  min-width: 0;
+  transition: transform 250ms ease;
+}
+
+.iconWrap {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: #25256f;
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.valueTitle {
+  margin: 0;
+  color: #111111;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  transition: color 250ms ease;
+}
+
+.valueDescription {
+  margin: 0.35rem 0 0;
+  max-width: 22rem;
+  color: #555555;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.valueItem:hover {
+  transform: translateY(-2px);
+}
+
+.valueItem:hover .iconWrap {
+  color: #f2b719;
+  transform: translateX(2px);
+}
+
+.valueItem:hover .valueTitle {
+  color: #f2b719;
+}
+
+@media (min-width: 1200px) {
+  .valueItem:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1px;
+    height: 50px;
+    background: rgba(30, 30, 30, 0.1);
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1199px) {
+  .valuesList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 18px 0;
+  }
+
+  .valuesList {
+    grid-template-columns: 1fr;
+    border-top: 0;
+  }
+
+  .valueItem {
+    padding: 16px 0;
+  }
+
+  .valueItem::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .valueItem,
+  .iconWrap,
+  .valueTitle {
+    transition: none;
+  }
+}

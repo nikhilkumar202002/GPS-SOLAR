@@ -6,10 +6,32 @@
   color: #fff;
 }
 
-.background {
+.backgroundStack {
+  position: absolute;
+  inset: 0;
   z-index: -1;
+  overflow: hidden;
+}
+
+.backgroundFrame {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+}
+
+.background {
   object-fit: cover;
   object-position: center;
+}
+
+.backgroundStack::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(35, 31, 32, 0.5) 0%, rgba(35, 31, 32, 0.18) 40%, rgba(35, 31, 32, 0.56) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.08) 45%, rgba(0, 0, 0, 0.2) 100%);
+  pointer-events: none;
 }
 
 .shell {
