@@ -53,12 +53,30 @@ const heroSlides = [
   },
 ];
 
+const PRELOADER_DONE_EVENT = "gps:preloader-finished";
+
 const Hero = () => {
   const prefersReducedMotion = useReducedMotion();
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPreloaderDone, setIsPreloaderDone] = useState(false);
 
   useEffect(() => {
-    if (prefersReducedMotion || heroSlides.length < 2) {
+    const markReady = () => setIsPreloaderDone(true);
+
+    if (document.body.dataset.preloaderReady === "true") {
+      window.setTimeout(markReady, 0);
+      return;
+    }
+
+    window.addEventListener(PRELOADER_DONE_EVENT, markReady);
+
+    return () => {
+      window.removeEventListener(PRELOADER_DONE_EVENT, markReady);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (prefersReducedMotion || !isPreloaderDone || heroSlides.length < 2) {
       return;
     }
 
@@ -67,7 +85,7 @@ const Hero = () => {
     }, 5200);
 
     return () => window.clearInterval(intervalId);
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, isPreloaderDone]);
 
   return (
     <section className={styles.section}>
@@ -83,7 +101,7 @@ const Hero = () => {
               className={styles.backgroundFrame}
               initial={false}
               animate={
-                prefersReducedMotion
+                prefersReducedMotion || !isPreloaderDone
                   ? { opacity: isActive ? 1 : 0 }
                   : {
                       opacity: isActive ? 1 : 0,
@@ -114,10 +132,11 @@ const Hero = () => {
 
       <div className={`container ${styles.shell}`}>
         <motion.div
+          key={isPreloaderDone ? "hero-ready" : "hero-waiting"}
           className={styles.content}
           variants={containerVariants}
-          initial="hidden"
-          animate="show"
+          initial={isPreloaderDone ? "hidden" : false}
+          animate={isPreloaderDone ? "show" : undefined}
         >
           <motion.h1 className={styles.heading} variants={itemVariants}>
             Smart Solar Solutions for a Brighter Tomorrow

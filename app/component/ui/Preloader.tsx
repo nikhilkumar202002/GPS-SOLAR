@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import logoMain from "@/app/assets/logo-main.png";
 
 const PRELOADER_DURATION = 3000;
+const PRELOADER_DONE_EVENT = "gps:preloader-finished";
 
 const Preloader = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -17,6 +18,8 @@ const Preloader = () => {
     const timer = window.setTimeout(() => {
       setIsVisible(false);
       document.body.style.overflow = originalOverflow;
+      document.body.dataset.preloaderReady = "true";
+      window.dispatchEvent(new Event(PRELOADER_DONE_EVENT));
     }, PRELOADER_DURATION);
 
     return () => {
