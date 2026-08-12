@@ -298,28 +298,6 @@
   color: #f2b719;
 }
 
-.imageStrip {
-  position: relative;
-  width: 100%;
-  height: 350px;
-  margin-top: 1.5rem;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.stripImage {
-  object-fit: cover;
-  object-position: center;
-}
-
-.stripOverlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.42)),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.18), transparent 30%, transparent 70%, rgba(0, 0, 0, 0.18));
-}
-
 @media (max-width: 1199px) {
   .intro {
     grid-template-columns: 1fr;

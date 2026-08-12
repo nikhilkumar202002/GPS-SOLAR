@@ -702,7 +702,7 @@ a.home-contact-contactItem:focus-visible {
 
 .process-step-inner {
   display: grid;
-  gap: clamp(2.5rem, 5vw, 4.5rem);
+  /* gap: clamp(2.5rem, 5vw, 4.5rem); */
 }
 
 .process-step-header {

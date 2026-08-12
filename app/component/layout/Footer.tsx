@@ -6,7 +6,6 @@ import { motion, useReducedMotion } from "motion/react";
 import { FiChevronRight, FiMail, FiPhone } from "react-icons/fi";
 
 import footerLogo from "@/app/assets/footer-logo.png";
-import footerStrip from "@/app/assets/banners/footer-banner.webp";
 import styles from "./Footer.module.css";
 
 const footerEase = [0.22, 1, 0.36, 1] as const;
@@ -75,7 +74,6 @@ const Footer = () => {
               className={styles.brandMark}
             />
             <div className={styles.brandBlock}>
-    
               <h2 id="footer-heading" className={styles.heading}>
                 Powering a Cleaner,
                 <br />
@@ -181,17 +179,6 @@ const Footer = () => {
             Clean Energy. Trusted Expertise. Better Tomorrow.
           </p>
         </motion.section>
-      </div>
-
-      <div className={styles.imageStrip}>
-        <Image
-          src={footerStrip}
-          alt="Solar panels installed on a residential rooftop at sunset"
-          fill
-          sizes="100vw"
-          className={styles.stripImage}
-        />
-        <div className={styles.stripOverlay} aria-hidden="true" />
       </div>
     </motion.footer>
   );
