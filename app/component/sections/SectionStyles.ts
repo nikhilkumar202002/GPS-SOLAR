@@ -2,6 +2,7 @@
 
 export const aboutUsStyles = {
   actions: 'about-us-actions',
+  cardShell: 'about-us-panel',
   content: 'about-us-content',
   description: 'about-us-description',
   eyebrow: 'about-us-eyebrow',
@@ -9,10 +10,9 @@ export const aboutUsStyles = {
   image: 'about-us-image',
   imageCard: 'about-us-imageCard',
   imageGlow: 'about-us-imageGlow',
-  inner: 'about-us-inner',
-  panel: 'about-us-panel',
+  layout: 'about-us-inner',
   section: 'about-us-section',
-  visual: 'about-us-visual',
+  media: 'about-us-visual',
 } as const
 
 export const coreValuesStyles = {
@@ -86,6 +86,7 @@ export const processStepStyles = {
   gridItem: 'process-step-gridItem',
   header: 'process-step-header',
   heading: 'process-step-heading',
+  inner: 'process-step-inner',
   number: 'process-step-number',
   section: 'process-step-section',
   stepWord: 'process-step-stepWord',
@@ -120,6 +121,7 @@ export const serviceSectionStyles = {
   readMoreIcon: 'service-section-readMoreIcon',
   readMoreText: 'service-section-readMoreText',
   readMoreWrap: 'service-section-readMoreWrap',
+  shell: 'service-section-shell',
   section: 'service-section-section',
   sunGlow: 'service-section-sunGlow',
   tabHint: 'service-section-tabHint',

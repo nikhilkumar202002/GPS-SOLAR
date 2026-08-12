@@ -32,19 +32,24 @@ const itemVariants = {
   },
 };
 
+const aboutUsSectionStyle = {
+  borderBottom: "1px solid rgba(35, 31, 32, 0.12)",
+  paddingBlock: "100px",
+} as const;
+
 const AboutUs = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} style={aboutUsSectionStyle}>
       <div className="container">
-        <div className={styles.panel}>
+        <div className={styles.cardShell}>
           <motion.div
-            className={styles.inner}
+            className={styles.layout}
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
           >
-            <motion.div className={styles.visual} variants={itemVariants}>
+            <motion.div className={styles.media} variants={itemVariants}>
               <div className={styles.imageCard}>
                 <div className={styles.imageGlow} aria-hidden="true" />
                 <Image

@@ -1,11 +1,17 @@
 "use client";
 
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from "react";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
 import { motion, type Variants } from "motion/react";
 
-const MotionLink = motion.create(Link);
+const MotionLink = motion.create(Link) as unknown as ComponentType<
+  ComponentPropsWithoutRef<typeof Link> & {
+    children: ReactNode;
+    className?: string;
+    variants?: Variants;
+  }
+>;
 
 type PrimaryButtonProps = ComponentPropsWithoutRef<typeof Link> & {
   children: ReactNode;

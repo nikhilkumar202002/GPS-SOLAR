@@ -1,9 +1,8 @@
 ﻿/* AboutUs */
 .about-us-section {
   position: relative;
-  border-top: 1px solid rgba(35, 31, 32, 0.12);
-  border-bottom: 1px solid rgba(35, 31, 32, 0.12);
-  padding: 100px 0;
+  border-bottom: 1px solid rgba(35, 31, 32, 0.12) !important;
+  padding: 100px 0 !important;
 }
 
 .about-us-inner {
@@ -701,6 +700,11 @@ a.home-contact-contactItem:focus-visible {
 
 }
 
+.process-step-inner {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
 .process-step-header {
   text-align: center;
   margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
@@ -888,6 +892,11 @@ a.home-contact-contactItem:focus-visible {
   background: #ffffff;
   padding: 120px 0;
   border-bottom: 1px solid rgba(35, 31, 32, 0.14);
+}
+
+.service-section-shell {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
 }
 
 
@@ -2207,5 +2216,3 @@ a.home-contact-contactItem:focus-visible {
     min-height: 175px;
   }
 }
-
-
