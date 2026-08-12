@@ -14,6 +14,8 @@ import homeBanner from "@/app/assets/images/why-choose-us.webp";
 import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./WhyChooseUs.module.css";
 
+const sectionEase = [0.22, 1, 0.36, 1] as const;
+
 const containerVariants = {
   hidden: {},
   show: {
@@ -32,7 +34,7 @@ const itemVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.58,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   },
 };

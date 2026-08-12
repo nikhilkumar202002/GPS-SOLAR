@@ -11,6 +11,8 @@ import logoWhite from "@/app/assets/logo-white.png";
 import menuList, { type MenuItem } from "@/app/data/menuList";
 import PrimaryButton from "../ui/PrimaryButton";
 
+const headerEase = [0.22, 1, 0.36, 1] as const;
+
 const desktopMenuLabels = [
   "Home",
   "Services",
@@ -182,7 +184,7 @@ const Header = () => {
 
                     {item.children && (
                       <ul className="invisible absolute left-0 top-full z-10 mt-2 min-w-52 rounded-xl bg-white p-2 text-slate-700 opacity-0 transition group-hover:visible group-hover:opacity-100">
-                        {item.children.map((child) => (
+                        {item.children?.map((child) => (
                           <li key={child.href}>
                             <Link
                               href={child.href}
@@ -228,7 +230,7 @@ const Header = () => {
               className={mobilePanelClassName}
               initial={{ opacity: 0, y: -10, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.25, ease: headerEase }}
             >
               <nav aria-label="Mobile navigation">
                 <ul className="space-y-2">
@@ -276,7 +278,7 @@ const Header = () => {
 
                         {hasChildren && isExpanded && (
                           <ul className="space-y-1 border-t border-black/5 px-4 py-3">
-                            {item.children.map((child) => (
+                            {item.children?.map((child) => (
                               <li key={child.href}>
                                 <Link
                                   href={child.href}

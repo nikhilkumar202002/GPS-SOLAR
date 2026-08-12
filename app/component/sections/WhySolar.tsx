@@ -13,6 +13,8 @@ import {
 import solarBanner from "@/app/assets/service/professional-installation.webp";
 import styles from "./WhySolar.module.css";
 
+const sectionEase = [0.22, 1, 0.36, 1] as const;
+
 type BenefitItem = {
   icon: IconType;
   title: string;
@@ -64,7 +66,7 @@ const fadeUpVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.62,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   },
 };

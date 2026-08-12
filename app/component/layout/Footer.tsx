@@ -9,6 +9,8 @@ import footerLogo from "@/app/assets/footer-logo.png";
 import footerStrip from "@/app/assets/banners/footer-banner.webp";
 import styles from "./Footer.module.css";
 
+const footerEase = [0.22, 1, 0.36, 1] as const;
+
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
@@ -33,7 +35,7 @@ const footerItemVariants = {
     y: 0,
     transition: {
       duration: 0.55,
-      ease: [0.22, 1, 0.36, 1],
+      ease: footerEase,
     },
   },
 };

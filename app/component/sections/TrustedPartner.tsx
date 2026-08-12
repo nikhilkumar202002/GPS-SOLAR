@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 
 import styles from "./TrustedPartner.module.css";
 
+const heroEase = [0.22, 1, 0.36, 1] as const;
+
 const containerVariants = {
   hidden: {},
   show: {
@@ -22,7 +24,7 @@ const itemVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: heroEase,
     },
   },
 };

@@ -9,6 +9,9 @@ import { homeServiceData } from "@/app/data/serviceData";
 import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./ServiceSection.module.css";
 
+const sectionEase = [0.22, 1, 0.36, 1] as const;
+const exitEase = [0.4, 0, 0.2, 1] as const;
+
 const sectionVariants = {
   hidden: {},
   show: {
@@ -27,7 +30,7 @@ const fadeUpVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   },
 };
@@ -40,7 +43,7 @@ const panelVariants = {
     scale: 1,
     transition: {
       duration: 0.45,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   },
   exit: {
@@ -49,7 +52,7 @@ const panelVariants = {
     scale: 0.985,
     transition: {
       duration: 0.28,
-      ease: [0.4, 0, 0.2, 1],
+      ease: exitEase,
     },
   },
 };
@@ -92,7 +95,7 @@ const ServiceSection = () => {
                   flexBasis: isActive ? "69%" : "10.333%",
                 }}
                 layout
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.55, ease: sectionEase }}
               >
                 <button
                   id={`${service.id}-trigger`}
@@ -113,17 +116,17 @@ const ServiceSection = () => {
 
                 <AnimatePresence initial={false} mode="wait">
                   {isActive ? (
-                    <motion.div
-                      key={service.id}
-                      id={`${service.id}-panel`}
-                      role="region"
-                      aria-labelledby={`${service.id}-trigger`}
-                      className={styles.panel}
-                      variants={panelVariants}
-                      initial="hidden"
-                      animate="show"
-                      exit="exit"
-                    >
+                      <motion.div
+                        key={service.id}
+                        id={`${service.id}-panel`}
+                        role="region"
+                        aria-labelledby={`${service.id}-trigger`}
+                        className={styles.panel}
+                        variants={panelVariants}
+                        initial="hidden"
+                        animate="show"
+                        exit="exit"
+                      >
                       <div className={styles.content}>
                         <p className={styles.description}>{service.description}</p>
                       </div>

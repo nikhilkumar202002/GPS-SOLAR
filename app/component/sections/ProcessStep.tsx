@@ -3,6 +3,8 @@
 import styles from "./ProcessStep.module.css";
 import { motion } from "motion/react";
 
+const sectionEase = [0.22, 1, 0.36, 1] as const;
+
 type ProcessItem = {
   number: string;
   title: string;
@@ -54,7 +56,7 @@ const itemVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   },
 };

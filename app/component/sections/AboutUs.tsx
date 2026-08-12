@@ -7,6 +7,8 @@ import homeBanner from "@/app/assets/images/home-about.webp";
 import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./AboutUs.module.css";
 
+const sectionEase = [0.22, 1, 0.36, 1] as const;
+
 const containerVariants = {
   hidden: {},
   show: {
@@ -25,7 +27,7 @@ const itemVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   },
 };

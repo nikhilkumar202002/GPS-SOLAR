@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --font-global: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", Arial, sans-serif;
+  --font-global: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
 
   /* Brand palette */
   --color-gold: #e9b11f;

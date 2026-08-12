@@ -1,0 +1,146 @@
+.section {
+  position: relative;
+  padding: 120px 0;
+  border-top: 1px solid rgba(35, 31, 32, 0.08);
+  border-bottom: 1px solid rgba(35, 31, 32, 0.08);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.copy {
+  display: grid;
+  max-width: 34rem;
+  padding-top: 0.35rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-gold);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.heading {
+  margin: 0;
+  color: var(--color-charcoal);
+  font-size: 55px;
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+
+.description {
+  margin: 0;
+  color: rgba(35, 31, 32, 0.72);
+  font-size: 1.02rem;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.contactList {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(35, 31, 32, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 30px rgba(35, 31, 32, 0.04);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+a.contactItem:hover,
+a.contactItem:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(182, 145, 67, 0.35);
+  box-shadow: 0 16px 34px rgba(35, 31, 32, 0.08);
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: rgba(242, 183, 25, 0.12);
+  color: var(--color-gold);
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.contactCopy {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.contactLabel {
+  color: rgba(35, 31, 32, 0.55);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.contactValue {
+  color: var(--color-charcoal);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.address {
+  font-style: normal;
+}
+
+.formWrap {
+  position: relative;
+}
+
+@media (max-width: 980px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .shell {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .copy {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .contactItem {
+    padding: 0.9rem;
+  }
+
+  .heading {
+    font-size: clamp(2rem, 12vw, 2.8rem);
+  }
+}

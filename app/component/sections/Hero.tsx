@@ -11,7 +11,9 @@ import homeBannerThree from "@/app/assets/banners/home-banner-3.webp";
 import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./Hero.module.css";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
+
+const heroEase = [0.22, 1, 0.36, 1] as const;
 
 const containerVariants = {
   hidden: {},
@@ -31,7 +33,7 @@ const itemVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.65,
-      ease: [0.22, 1, 0.36, 1],
+      ease: heroEase,
     },
   },
 };
@@ -88,12 +90,12 @@ const Hero = () => {
                       scale: isActive ? 1 : isPrevious ? 1.08 : 1.12,
                     }
               }
-              transition={
+      transition={
                 prefersReducedMotion
                   ? { duration: 0 }
                   : {
                       duration: 1.05,
-                      ease: [0.22, 1, 0.36, 1],
+                      ease: heroEase,
                     }
               }
             >

@@ -8,6 +8,8 @@ import premPortrait from "@/app/assets/teams/prem-kumar.webp";
 import PrimaryButton from "../ui/PrimaryButton";
 import styles from "./TeamHome.module.css";
 
+const sectionEase = [0.22, 1, 0.36, 1] as const;
+
 type Leader = {
   name: string;
   role: string;
@@ -52,7 +54,7 @@ const fadeUpVariants = {
     y: 0,
     transition: {
       duration: 0.62,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   },
 };
@@ -65,7 +67,7 @@ const cardVariants = {
     transition: {
       duration: 0.68,
       delay: delayIndex * 0.1,
-      ease: [0.22, 1, 0.36, 1],
+      ease: sectionEase,
     },
   }),
 };

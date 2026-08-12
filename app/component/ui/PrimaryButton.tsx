@@ -7,7 +7,7 @@ import { motion, type Variants } from "motion/react";
 
 import styles from "./PrimaryButton.module.css";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link as unknown as any);
 
 type PrimaryButtonProps = ComponentPropsWithoutRef<typeof Link> & {
   children: ReactNode;

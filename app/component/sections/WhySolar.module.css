@@ -27,9 +27,8 @@
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: clamp(112px, 10vw, 128px);
   text-align: center;
 }
 
@@ -162,7 +161,7 @@
   }
 
   .heroShell {
-    padding-top: 118px;
+    align-items: center;
   }
 
   .heading {
@@ -187,6 +186,7 @@
   }
 
   .heroShell {
+    align-items: flex-start;
     padding-top: 110px;
   }
 
