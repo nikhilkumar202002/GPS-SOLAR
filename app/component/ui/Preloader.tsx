@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import logoMain from "@/app/assets/logo-main.png";
-import styles from "./Preloader.module.css";
 
 const PRELOADER_DURATION = 3000;
 
@@ -31,16 +30,16 @@ const Preloader = () => {
   }
 
   return (
-    <div className={styles.overlay} role="status" aria-label="Loading homepage">
-      <div className={styles.content}>
-        <div className={styles.logoWrap}>
+    <div className="ui-preloader-overlay" role="status" aria-label="Loading homepage">
+      <div className="ui-preloader-content">
+        <div className="ui-preloader-logo-wrap">
           <Image
             src={logoMain}
             alt="GPS Solar Solutions"
             width={180}
             height={180}
             priority
-            className={styles.logo}
+            className="ui-preloader-logo"
           />
         </div>
       </div>

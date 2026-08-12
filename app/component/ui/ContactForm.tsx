@@ -1,5 +1,3 @@
-import styles from "./ContactForm.module.css";
-import primaryButtonStyles from "./PrimaryButton.module.css";
 import { HiArrowRight, HiChevronDown } from "react-icons/hi2";
 
 const serviceOptions = [
@@ -14,14 +12,14 @@ const serviceOptions = [
 
 const ContactForm = () => {
   return (
-    <form className={styles.form}>
-      <div className={styles.grid}>
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="name">
+    <form className="ui-contact-form">
+      <div className="ui-contact-form-grid">
+        <div className="ui-contact-form-field">
+          <label className="ui-contact-form-label" htmlFor="name">
             Name
           </label>
           <input
-            className={styles.input}
+            className="ui-contact-form-input"
             id="name"
             name="name"
             type="text"
@@ -31,12 +29,12 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="email">
+        <div className="ui-contact-form-field">
+          <label className="ui-contact-form-label" htmlFor="email">
             Email
           </label>
           <input
-            className={styles.input}
+            className="ui-contact-form-input"
             id="email"
             name="email"
             type="email"
@@ -46,12 +44,12 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="phone">
+        <div className="ui-contact-form-field">
+          <label className="ui-contact-form-label" htmlFor="phone">
             Phone
           </label>
           <input
-            className={styles.input}
+            className="ui-contact-form-input"
             id="phone"
             name="phone"
             type="tel"
@@ -61,13 +59,13 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="service">
+        <div className="ui-contact-form-field">
+          <label className="ui-contact-form-label" htmlFor="service">
             Service
           </label>
-          <div className={styles.selectWrap}>
+          <div className="ui-contact-form-select-wrap">
             <select
-              className={`${styles.input} ${styles.select}`}
+              className="ui-contact-form-input ui-contact-form-select"
               id="service"
               name="service"
               required
@@ -82,16 +80,16 @@ const ContactForm = () => {
                 </option>
               ))}
             </select>
-            <HiChevronDown className={styles.selectIcon} aria-hidden="true" />
+            <HiChevronDown className="ui-contact-form-select-icon" aria-hidden="true" />
           </div>
         </div>
 
-        <div className={`${styles.field} ${styles.fullWidth}`}>
-          <label className={styles.label} htmlFor="message">
+        <div className="ui-contact-form-field ui-contact-form-full-width">
+          <label className="ui-contact-form-label" htmlFor="message">
             Message
           </label>
           <textarea
-            className={styles.textarea}
+            className="ui-contact-form-textarea"
             id="message"
             name="message"
             placeholder="Tell us about your project"
@@ -102,12 +100,12 @@ const ContactForm = () => {
       </div>
 
       <button
-        className={`${primaryButtonStyles.button} ${styles.submitButton}`}
+        className="ui-primary-button ui-contact-form-submit"
         type="submit"
       >
         Send Message
-        <span className={primaryButtonStyles.icon}>
-          <HiArrowRight className={primaryButtonStyles.arrowIcon} />
+        <span className="ui-primary-button-icon">
+          <HiArrowRight className="ui-primary-button-arrow" />
         </span>
       </button>
     </form>

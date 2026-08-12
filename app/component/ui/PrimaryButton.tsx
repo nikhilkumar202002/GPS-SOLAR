@@ -5,9 +5,7 @@ import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
 import { motion, type Variants } from "motion/react";
 
-import styles from "./PrimaryButton.module.css";
-
-const MotionLink = motion.create(Link as unknown as any);
+const MotionLink = motion.create(Link);
 
 type PrimaryButtonProps = ComponentPropsWithoutRef<typeof Link> & {
   children: ReactNode;
@@ -21,13 +19,15 @@ const PrimaryButton = ({
   variants,
   ...props
 }: PrimaryButtonProps) => {
-  const buttonClassName = className ? `${styles.button} ${className}` : styles.button;
+  const buttonClassName = className
+    ? `ui-primary-button ${className}`
+    : "ui-primary-button";
 
   return (
     <MotionLink className={buttonClassName} variants={variants} {...props}>
       {children}
-      <span className={styles.icon}>
-        <HiArrowRight className={styles.arrowIcon} />
+      <span className="ui-primary-button-icon">
+        <HiArrowRight className="ui-primary-button-arrow" />
       </span>
     </MotionLink>
   );

@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import whatsappIcon from "@/app/assets/whatsapp-icon.png";
-import styles from "./WhatsAppButton.module.css";
 
 const whatsappUrl = "https://wa.me/919876543210?text=Hi%20GPS%20Trades%20and%20Services";
 
@@ -11,7 +10,7 @@ const WhatsAppButton = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noreferrer noopener"
-      className={styles.button}
+      className="ui-whatsapp-button"
       aria-label="Chat with us on WhatsApp"
     >
       <Image
@@ -19,7 +18,7 @@ const WhatsAppButton = () => {
         alt=""
         width={56}
         height={56}
-        className={styles.icon}
+        className="ui-whatsapp-icon"
       />
     </a>
   );
