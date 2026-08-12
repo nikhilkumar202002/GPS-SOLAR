@@ -62,21 +62,6 @@ const ContactForm = () => {
         </div>
 
         <div className={styles.field}>
-          <label className={styles.label} htmlFor="number">
-            Number
-          </label>
-          <input
-            className={styles.input}
-            id="number"
-            name="number"
-            type="number"
-            placeholder="Enter a number"
-            min="0"
-            required
-          />
-        </div>
-
-        <div className={`${styles.field} ${styles.fullWidth}`}>
           <label className={styles.label} htmlFor="service">
             Service
           </label>

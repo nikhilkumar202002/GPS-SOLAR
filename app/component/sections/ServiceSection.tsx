@@ -36,11 +36,10 @@ const fadeUpVariants = {
 };
 
 const panelVariants = {
-  hidden: { opacity: 0, y: 18, scale: 0.98 },
+  hidden: { opacity: 0, y: 18 },
   show: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
       duration: 0.45,
       ease: sectionEase,
@@ -49,7 +48,6 @@ const panelVariants = {
   exit: {
     opacity: 0,
     y: -12,
-    scale: 0.985,
     transition: {
       duration: 0.28,
       ease: exitEase,
@@ -94,7 +92,6 @@ const ServiceSection = () => {
                 style={{
                   flexBasis: isActive ? "69%" : "10.333%",
                 }}
-                layout
                 transition={{ duration: 0.55, ease: sectionEase }}
               >
                 <button

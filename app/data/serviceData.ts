@@ -1,9 +1,9 @@
 import type { StaticImageData } from "next/image";
 
-import commercialSolarSolutions from "@/app/assets/service/commercial-solar-solutions.webp";
-import maintenanceSupport from "@/app/assets/service/maintenance-support.webp";
-import professionalInstallation from "@/app/assets/service/professional-installation.webp";
-import residentialSolarSystems from "@/app/assets/service/residential-solar-systems.webp";
+import commercialSolarSolutions from "@/app/assets/service/commercial-solar-service.webp";
+import maintenanceSupport from "@/app/assets/service/professional-installation-service-2.webp";
+import professionalInstallation from "@/app/assets/service/professional-installation-service.webp";
+import residentialSolarSystems from "@/app/assets/service/residential-solar-service.webp";
 
 export type HomeServiceItem = {
   id: string;

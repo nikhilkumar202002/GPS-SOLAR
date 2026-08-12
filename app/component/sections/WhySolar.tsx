@@ -10,7 +10,7 @@ import {
   MdSolarPower,
 } from "react-icons/md";
 
-import solarBanner from "@/app/assets/service/professional-installation.webp";
+import solarBanner from "@/app/assets/banners/why-solar-banner.webp";
 import styles from "./WhySolar.module.css";
 
 const sectionEase = [0.22, 1, 0.36, 1] as const;
