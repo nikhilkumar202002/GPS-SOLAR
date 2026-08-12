@@ -6,7 +6,7 @@ import {
   HiOutlineChatBubbleLeftRight,
   HiOutlineChevronDown,
 } from "react-icons/hi2";
-import styles from "./FAQ.module.css";
+import { faqStyles as styles } from "./SectionStyles";
 
 type FaqItem = {
   question: string;

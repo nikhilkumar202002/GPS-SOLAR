@@ -1,7 +1,7 @@
 "use client";
 
-import styles from "./ProcessStep.module.css";
 import { motion } from "motion/react";
+import { processStepStyles as styles } from "./SectionStyles";
 
 const sectionEase = [0.22, 1, 0.36, 1] as const;
 

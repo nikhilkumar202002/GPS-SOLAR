@@ -1,7 +1,7 @@
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 import ContactForm from "../ui/ContactForm";
-import styles from "./HomeContact.module.css";
+import { homeContactStyles as styles } from "./SectionStyles";
 
 const contactItems = [
   {

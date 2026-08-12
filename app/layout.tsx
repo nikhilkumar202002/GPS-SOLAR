@@ -4,6 +4,7 @@ import Footer from "./component/layout/Footer";
 import PreloaderHost from "./component/ui/PreloaderHost";
 import WhatsAppButton from "./component/ui/WhatsAppButton";
 import "./component/ui/uistyles.css";
+import "./component/sections/SectionStyles.css";
 import "./globals.css";
 
 export const metadata: Metadata = {

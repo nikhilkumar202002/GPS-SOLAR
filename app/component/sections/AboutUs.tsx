@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 import homeBanner from "@/app/assets/images/home-about.webp";
 import PrimaryButton from "../ui/PrimaryButton";
-import styles from "./AboutUs.module.css";
+import { aboutUsStyles as styles } from "./SectionStyles";
 
 const sectionEase = [0.22, 1, 0.36, 1] as const;
 

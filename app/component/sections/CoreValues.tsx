@@ -9,7 +9,7 @@ import {
   MdWorkspacePremium,
 } from "react-icons/md";
 
-import styles from "./CoreValues.module.css";
+import { coreValuesStyles as styles } from "./SectionStyles";
 
 const sectionEase = [0.22, 1, 0.36, 1] as const;
 

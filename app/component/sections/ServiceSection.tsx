@@ -7,7 +7,7 @@ import { HiOutlineArrowRight } from "react-icons/hi2";
 
 import { homeServiceData } from "@/app/data/serviceData";
 import PrimaryButton from "../ui/PrimaryButton";
-import styles from "./ServiceSection.module.css";
+import { serviceSectionStyles as styles } from "./SectionStyles";
 
 const sectionEase = [0.22, 1, 0.36, 1] as const;
 const exitEase = [0.4, 0, 0.2, 1] as const;

@@ -9,7 +9,7 @@ import homeBanner from "@/app/assets/banners/home-banner-1.webp";
 import homeBannerTwo from "@/app/assets/banners/home-banner-2.webp";
 import homeBannerThree from "@/app/assets/banners/home-banner-3.webp";
 import PrimaryButton from "../ui/PrimaryButton";
-import styles from "./Hero.module.css";
+import { heroStyles as styles } from "./SectionStyles";
 
 const MotionLink = motion.create(Link);
 

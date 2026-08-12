@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "motion/react";
 import gowriPortrait from "@/app/assets/teams/Gowri.webp";
 import premPortrait from "@/app/assets/teams/prem-kumar.webp";
 import PrimaryButton from "../ui/PrimaryButton";
-import styles from "./TeamHome.module.css";
+import { teamHomeStyles as styles } from "./SectionStyles";
 
 const sectionEase = [0.22, 1, 0.36, 1] as const;
 

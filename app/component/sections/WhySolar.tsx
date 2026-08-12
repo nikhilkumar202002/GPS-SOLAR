@@ -11,7 +11,7 @@ import {
 } from "react-icons/md";
 
 import solarBanner from "@/app/assets/banners/why-solar-banner.webp";
-import styles from "./WhySolar.module.css";
+import { whySolarStyles as styles } from "./SectionStyles";
 
 const sectionEase = [0.22, 1, 0.36, 1] as const;
 

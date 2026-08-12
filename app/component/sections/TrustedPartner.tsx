@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 
-import styles from "./TrustedPartner.module.css";
+import { trustedPartnerStyles as styles } from "./SectionStyles";
 
 const heroEase = [0.22, 1, 0.36, 1] as const;
 

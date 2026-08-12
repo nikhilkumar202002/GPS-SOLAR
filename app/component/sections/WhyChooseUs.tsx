@@ -12,7 +12,7 @@ import {
 
 import homeBanner from "@/app/assets/images/why-choose-us.webp";
 import PrimaryButton from "../ui/PrimaryButton";
-import styles from "./WhyChooseUs.module.css";
+import { whyChooseUsStyles as styles } from "./SectionStyles";
 
 const sectionEase = [0.22, 1, 0.36, 1] as const;
 
