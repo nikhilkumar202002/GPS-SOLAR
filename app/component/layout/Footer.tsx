@@ -121,19 +121,9 @@ const Footer = () => {
           <div className={styles.contactColumn}>
             <h3 className={styles.columnTitle}>Contact Us</h3>
             <address className={styles.address}>
-              <p className={styles.companyName}>GPS Trades and Services</p>
-              <p className={styles.descriptionText}>
-                Solar Energy Solutions for Homes &amp; Businesses
-              </p>
-
               <p className={styles.contactRow}>
-                <span className={styles.label}>Proprietor:</span>
-                <span className={styles.value}>Gowri P. S.</span>
-              </p>
-
-              <p className={styles.contactRow}>
-                <span className={styles.label}>General Manager:</span>
-                <span className={styles.value}>J. P. Prem Kumar</span>
+                <span className={styles.label}>Address:</span>
+                <span className={styles.value}>Your business address line 1</span>
               </p>
 
               <a href="tel:+91XXXXXXXXXX" className={styles.contactLink}>
