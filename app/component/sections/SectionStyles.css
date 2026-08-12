@@ -1985,7 +1985,7 @@ a.home-contact-contactItem:focus-visible {
   text-align: center;
 }
 
-.why-solar-heroShell :global(.container) {
+.why-solar-heroShell .container {
   width: 100%;
   height: 100%;
   display: flex;
