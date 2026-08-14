@@ -3,9 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
-import { FiChevronRight, FiMail, FiPhone } from "react-icons/fi";
+import { FiChevronRight, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 import footerLogo from "@/app/assets/footer-logo.png";
+import {
+  contactAddressLines,
+  contactEmail,
+  contactPhones,
+} from "@/app/data/contactInfo";
 import styles from "./Footer.module.css";
 
 const footerEase = [0.22, 1, 0.36, 1] as const;
@@ -122,24 +127,29 @@ const Footer = () => {
             <h3 className={styles.columnTitle}>Contact Us</h3>
             <address className={styles.address}>
               <p className={styles.contactRow}>
+                <FiMapPin aria-hidden="true" className={styles.inlineIcon} />
                 <span className={styles.label}>Address:</span>
-                <span className={styles.value}>Your business address line 1</span>
+                <span className={styles.value}>
+                  {contactAddressLines.join(" ")}
+                </span>
               </p>
 
-              <a href="tel:+91XXXXXXXXXX" className={styles.contactLink}>
-                <FiPhone aria-hidden="true" className={styles.inlineIcon} />
-                <span className={styles.label}>Phone:</span>
-                <span className={styles.value}>+91 XXXXX XXXXX</span>
-              </a>
+              {contactPhones.map((phone) => (
+                <a key={phone.display} href={phone.href} className={styles.contactLink}>
+                  <FiPhone aria-hidden="true" className={styles.inlineIcon} />
+                  <span className={styles.label}>{phone.label}:</span>
+                  <span className={styles.value}>{phone.display}</span>
+                </a>
+              ))}
 
               <a
-                href="mailto:info@gpstradesandservices.com"
+                href={contactEmail.href}
                 className={styles.contactLink}
               >
                 <FiMail aria-hidden="true" className={styles.inlineIcon} />
-                <span className={styles.label}>Email:</span>
+                <span className={styles.label}>{contactEmail.label}:</span>
                 <span className={styles.emailValue}>
-                  info@gpstradesandservices.com
+                  {contactEmail.display}
                 </span>
               </a>
             </address>

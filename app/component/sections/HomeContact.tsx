@@ -1,20 +1,25 @@
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
+import {
+  contactAddressLines,
+  contactEmail,
+  contactPhones,
+} from "@/app/data/contactInfo";
 import ContactForm from "../ui/ContactForm";
 import { homeContactStyles as styles } from "./SectionStyles";
 
 const contactItems = [
   {
-    icon: FiMail,
-    label: "Email",
-    value: "info@gpstradesandservices.com",
-    href: "mailto:info@gpstradesandservices.com",
+    icon: FiPhone,
+    label: contactPhones[0].label,
+    value: contactPhones[0].display,
+    href: contactPhones[0].href,
   },
   {
     icon: FiPhone,
-    label: "Phone",
-    value: "+91 XXXXX XXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    label: contactPhones[1].label,
+    value: contactPhones[1].display,
+    href: contactPhones[1].href,
   },
 ];
 
@@ -54,13 +59,28 @@ const HomeContact = () => {
                   <span className={styles.contactCopy}>
                     <span className={styles.contactLabel}>Address</span>
                     <span className={styles.contactValue}>
-                      Your office address line 1
-                      <br />
-                      City, State, Postal Code
+                      {contactAddressLines.map((line, index) => (
+                        <span key={line}>
+                          {line}
+                          {index < contactAddressLines.length - 1 ? <br /> : null}
+                        </span>
+                      ))}
                     </span>
                   </span>
                 </span>
               </address>
+
+              <a className={styles.contactItem} href={contactEmail.href}>
+                <span className={styles.iconWrap} aria-hidden="true">
+                  <FiMail className={styles.icon} />
+                </span>
+                <span className={styles.contactCopy}>
+                  <span className={styles.contactLabel}>{contactEmail.label}</span>
+                  <span className={styles.contactValue}>
+                    {contactEmail.display}
+                  </span>
+                </span>
+              </a>
             </div>
           </div>
 
