@@ -5,9 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 
-import homeBanner from "@/app/assets/banners/home-banner-1.webp";
-import homeBannerTwo from "@/app/assets/banners/home-banner-2.webp";
-import homeBannerThree from "@/app/assets/banners/home-banner-3.webp";
+import homeBanner from "@/app/assets/banners/hero-banner-1.webp";
+import homeBannerTwo from "@/app/assets/banners/hero-banner-2.webp";
 import PrimaryButton from "../ui/PrimaryButton";
 import { heroStyles as styles } from "./SectionStyles";
 
@@ -47,10 +46,6 @@ const heroSlides = [
     src: homeBannerTwo,
     alt: "Solar panels installed on a modern rooftop",
   },
-  {
-    src: homeBannerThree,
-    alt: "Solar installation team working on a rooftop solar array",
-  },
 ];
 
 const PRELOADER_DONE_EVENT = "gps:preloader-finished";
@@ -88,7 +83,7 @@ const Hero = () => {
   }, [prefersReducedMotion, isPreloaderDone]);
 
   return (
-    <section className={styles.section}>
+    <section id="home" className={styles.section}>
       <div className={styles.backgroundStack} aria-hidden="true">
         {heroSlides.map((slide, index) => {
           const isActive = index === activeSlide;
@@ -147,14 +142,14 @@ const Hero = () => {
 
           <div className={styles.actions}>
             <PrimaryButton
-              href="/get-free-quote"
+              href="/#contact"
               className={styles.primaryButtonOverride}
               variants={itemVariants}
             >
               Get a Free Quote
             </PrimaryButton>
             <MotionLink
-              href="/contact"
+              href="/#services"
               className={styles.secondaryButton}
               variants={itemVariants}
             >

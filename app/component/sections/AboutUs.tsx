@@ -39,7 +39,7 @@ const aboutUsSectionStyle = {
 
 const AboutUs = () => {
   return (
-    <section className={styles.section} style={aboutUsSectionStyle}>
+    <section id="about-us" className={styles.section} style={aboutUsSectionStyle}>
       <div className="container">
         <div className={styles.cardShell}>
           <motion.div
@@ -83,7 +83,7 @@ const AboutUs = () => {
               </p>
 
               <div className={styles.actions}>
-                <PrimaryButton href="/contact">
+                <PrimaryButton href="/#contact">
                   Read More
                 </PrimaryButton>
               </div>

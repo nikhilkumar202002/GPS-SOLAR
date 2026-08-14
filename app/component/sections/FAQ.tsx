@@ -107,7 +107,7 @@ const FAQ = () => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className={styles.section} aria-labelledby="faq-heading">
+    <section id="faq" className={styles.section} aria-labelledby="faq-heading">
       <div className="container">
         <motion.div
           className={styles.shell}

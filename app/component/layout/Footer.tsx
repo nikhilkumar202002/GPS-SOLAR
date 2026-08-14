@@ -6,31 +6,23 @@ import { motion, useReducedMotion } from "motion/react";
 import { FiChevronRight, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 import footerLogo from "@/app/assets/footer-logo.png";
+import { homeServiceData } from "@/app/data/serviceData";
 import {
   contactAddressLines,
   contactEmail,
   contactPhones,
 } from "@/app/data/contactInfo";
+import menuList from "@/app/data/menuList";
 import styles from "./Footer.module.css";
 
 const footerEase = [0.22, 1, 0.36, 1] as const;
 
-const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Services", href: "/services" },
-  { label: "Our Process", href: "/our-process" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
-];
+const quickLinks = menuList;
 
-const services = [
-  { label: "Residential Solar", href: "/services/residential-solar" },
-  { label: "Commercial Solar", href: "/services/commercial-solar" },
-  { label: "Solar Installation", href: "/services/installation" },
-  { label: "Solar Maintenance", href: "/services/maintenance" },
-  { label: "Solar Consultation", href: "/services/solar-consultation" },
-];
+const services = homeServiceData.map((service) => ({
+  label: service.title,
+  href: `/#${service.id}`,
+}));
 
 const footerItemVariants = {
   hidden: { opacity: 0, y: 14 },

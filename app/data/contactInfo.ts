@@ -27,6 +27,5 @@ export const createWhatsAppEnquiryUrl = (serviceName: string) => {
 export const contactAddressLines = [
   "65/368, First Floor, Fortune Tower",
   "Judges Avenue Road, Kaloor,",
-  "Kochi,",
-  "Kerala 682 017",
+  "Kochi, Kerala 682 017",
 ] as const;

@@ -25,7 +25,11 @@ const contactItems = [
 
 const HomeContact = () => {
   return (
-    <section className={styles.section} aria-labelledby="home-contact-heading">
+    <section
+      id="contact"
+      className={styles.section}
+      aria-labelledby="home-contact-heading"
+    >
       <div className="container">
         <div className={styles.shell}>
           <div className={styles.copy}>

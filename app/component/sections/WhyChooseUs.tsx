@@ -69,7 +69,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className={styles.section}>
+    <section id="why-choose-us" className={styles.section}>
       <div className="container">
         <div className={styles.panel}>
           <motion.div
@@ -117,7 +117,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 <div className={styles.actions}>
-                  <PrimaryButton href="/contact">
+                  <PrimaryButton href="/#contact">
                     Get a Free Quote
                   </PrimaryButton>
                 </div>

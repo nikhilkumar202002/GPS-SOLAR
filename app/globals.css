@@ -28,6 +28,21 @@
   --color-warm-gold-rgb: 240, 212, 110;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 112px;
+}
+
+section[id] {
+  scroll-margin-top: 112px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--font-global);
 }

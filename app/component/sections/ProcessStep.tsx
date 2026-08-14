@@ -64,6 +64,7 @@ const itemVariants = {
 const ProcessStep = () => {
   return (
     <motion.section
+      id="our-process"
       className={styles.section}
       aria-labelledby="process-heading"
       variants={containerVariants}

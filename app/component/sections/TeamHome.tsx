@@ -98,7 +98,7 @@ const TeamHome = () => {
             </motion.h2>
 
             <motion.div variants={fadeUpVariants} className={styles.actions}>
-              <PrimaryButton href="/contact">Get a Quote</PrimaryButton>
+              <PrimaryButton href="/#contact">Get a Quote</PrimaryButton>
             </motion.div>
           </motion.div>
 

@@ -8,21 +8,11 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 import logoMain from "@/app/assets/logo-main.png";
 import logoWhite from "@/app/assets/logo-white.png";
-import menuList, { type MenuItem } from "@/app/data/menuList";
+import menuList from "@/app/data/menuList";
 import PrimaryButton from "../ui/PrimaryButton";
 
 const headerEase = [0.22, 1, 0.36, 1] as const;
-
-const desktopMenuLabels = [
-  "Home",
-  "Services",
-  "Projects",
-  "About Us",
-  "Why Solar",
-];
-const desktopMenu = desktopMenuLabels
-  .map((label) => menuList.find((item) => item.label === label))
-  .filter((item): item is MenuItem => item !== undefined);
+const desktopMenu = menuList;
 
 type HeaderMode = "top" | "sticky" | "hidden";
 
@@ -180,7 +170,7 @@ const Header = () => {
             </nav>
 
             <div className="hidden text-[16px] font-medium lg:block">
-              <PrimaryButton href="/contact">Contact Us</PrimaryButton>
+              <PrimaryButton href="/#contact">Contact Us</PrimaryButton>
             </div>
 
             <button
@@ -225,7 +215,7 @@ const Header = () => {
                 </ul>
 
                 <div className="mt-4">
-                  <PrimaryButton href="/contact" className="w-full justify-center">
+                  <PrimaryButton href="/#contact" className="w-full justify-center">
                     Contact Us
                   </PrimaryButton>
                 </div>

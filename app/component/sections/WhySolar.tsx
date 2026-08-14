@@ -73,7 +73,11 @@ const fadeUpVariants = {
 
 const WhySolar = () => {
   return (
-    <section className={styles.section} aria-labelledby="why-solar-heading">
+    <section
+      id="why-solar"
+      className={styles.section}
+      aria-labelledby="why-solar-heading"
+    >
       <div className={styles.heroStage}>
         <Image
           src={solarBanner}

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
+import { HiOutlineArrowRight } from "react-icons/hi2";
 
-import whatsappIcon from "@/app/assets/whatsapp-icon.png";
 import { createWhatsAppEnquiryUrl } from "@/app/data/contactInfo";
 import { homeServiceData } from "@/app/data/serviceData";
 import PrimaryButton from "../ui/PrimaryButton";
@@ -61,6 +61,7 @@ const ServiceSection = () => {
 
   return (
     <motion.section
+      id="services"
       className={styles.section}
       aria-labelledby="services-heading"
       variants={sectionVariants}
@@ -87,6 +88,7 @@ const ServiceSection = () => {
             return (
               <motion.article
                 key={service.id}
+                id={service.id}
                 className={`${styles.item} ${
                   isActive ? styles.activeItem : styles.inactiveItem
                 }`}
@@ -166,12 +168,7 @@ const ServiceSection = () => {
                               className={styles.readMoreIcon}
                               aria-hidden="true"
                             >
-                              <Image
-                                src={whatsappIcon}
-                                alt=""
-                                width={18}
-                                height={18}
-                              />
+                              <HiOutlineArrowRight />
                             </span>
                           </a>
                         </div>
@@ -185,8 +182,8 @@ const ServiceSection = () => {
         </motion.div>
 
         <motion.div className={styles.ctaWrap} variants={fadeUpVariants}>
-          <PrimaryButton href="/services" className={styles.primaryCta}>
-            View All Services
+          <PrimaryButton href="/#contact" className={styles.primaryCta}>
+            Enquire Now
           </PrimaryButton>
         </motion.div>
       </div>
