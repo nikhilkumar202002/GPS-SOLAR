@@ -11,7 +11,6 @@ const menuList: MenuItem[] = [
   { label: "Why Choose Us", href: "/#why-choose-us" },
   { label: "Why Solar", href: "/#why-solar" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export default menuList;
