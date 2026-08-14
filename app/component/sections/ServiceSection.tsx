@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { HiOutlineArrowRight } from "react-icons/hi2";
 
+import whatsappIcon from "@/app/assets/whatsapp-icon.png";
+import { createWhatsAppEnquiryUrl } from "@/app/data/contactInfo";
 import { homeServiceData } from "@/app/data/serviceData";
 import PrimaryButton from "../ui/PrimaryButton";
 import { serviceSectionStyles as styles } from "./SectionStyles";
@@ -151,13 +152,26 @@ const ServiceSection = () => {
                         />
 
                         <div className={styles.readMoreWrap}>
-                          <a href="/contact" className={styles.readMore}>
-                            <span className={styles.readMoreText}>Read More</span>
+                          <a
+                            href={createWhatsAppEnquiryUrl(service.title)}
+                            className={styles.readMore}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            aria-label={`Enquire about ${service.title} on WhatsApp`}
+                          >
+                            <span className={styles.readMoreText}>
+                              Enquire Now
+                            </span>
                             <span
                               className={styles.readMoreIcon}
                               aria-hidden="true"
                             >
-                              <HiOutlineArrowRight />
+                              <Image
+                                src={whatsappIcon}
+                                alt=""
+                                width={18}
+                                height={18}
+                              />
                             </span>
                           </a>
                         </div>

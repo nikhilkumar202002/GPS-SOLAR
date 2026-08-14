@@ -130,7 +130,12 @@ const Footer = () => {
                 <FiMapPin aria-hidden="true" className={styles.inlineIcon} />
                 <span className={styles.label}>Address:</span>
                 <span className={styles.value}>
-                  {contactAddressLines.join(" ")}
+                  {contactAddressLines.map((line, index) => (
+                    <span key={line}>
+                      {line}
+                      {index < contactAddressLines.length - 1 ? <br /> : null}
+                    </span>
+                  ))}
                 </span>
               </p>
 
